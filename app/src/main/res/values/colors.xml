@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#559af9</color>
+    <color name="colorPrimaryDark">#559af9</color>
+    <color name="colorAccent">#559af9</color>
+
+    <color name="colorTheme">#559af9</color>
+    <color name="colorThemeLight">#e4f0fe</color>
+    <color name="colorDefaultTitlebarBg">#ffffff</color>
+    <color name="colorDefaultTitlebarTextTitle">#333333</color>
+    <color name="colorDefaultTitlebarTextMenu">#333333</color>
+
+    <color name="colorBgLighterGray">#f5f5f5</color>
+
+    <color name="colorRedDiscount">#fd364d</color>
+
+    <color name="colorYellow">#eea122</color>
+
+    <color name="colorGhostWhite">#f8f8ff</color>
 </resources>
