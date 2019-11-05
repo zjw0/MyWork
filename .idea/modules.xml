@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/AFramework/aframework.iml" filepath="$PROJECT_DIR$/AFramework/aframework.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyWork.iml" filepath="$PROJECT_DIR$/MyWork.iml" />
-      <module fileurl="file://$PROJECT_DIR$/aframework/aframework.iml" filepath="$PROJECT_DIR$/aframework/aframework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SmartRefreshLayoutFragment/SmartRefreshLayoutFragment.iml" filepath="$PROJECT_DIR$/SmartRefreshLayoutFragment/SmartRefreshLayoutFragment.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

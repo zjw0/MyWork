@@ -1,1 +1,1 @@
-include ':app', ':aframework'
+include ':app', ':AFramework', ':SmartRefreshLayoutFragment'
