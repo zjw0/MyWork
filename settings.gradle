@@ -1,1 +1,1 @@
-include ':app', ':AFramework', ':SmartRefreshLayoutFragment'
+include ':app', ':AFramework', ':SmartRefreshLayoutFragment', ':WxImageSelector'

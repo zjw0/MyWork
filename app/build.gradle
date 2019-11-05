@@ -29,4 +29,6 @@ dependencies {
     implementation project(':AFramework')
     //下拉刷新封装
     implementation project(':SmartRefreshLayoutFragment')
+    //图片多选
+    implementation project(':WxImageSelector')
 }
