@@ -1,1 +1,1 @@
-include ':app', ':AFramework', ':SmartRefreshLayoutFragment', ':WxImageSelector'
+include ':app', ':AFramework', ':SmartRefreshLayoutFragment', ':WxImageSelector', ':AndroidImageCropper', ':JiaoZiVideoPlayer', ':WxCameraView', ':QrCodeScan', ':WxVoiceSelector'

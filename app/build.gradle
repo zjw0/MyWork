@@ -26,9 +26,36 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //基础框架
     implementation project(':AFramework')
     //下拉刷新封装
     implementation project(':SmartRefreshLayoutFragment')
     //图片多选
     implementation project(':WxImageSelector')
+    //图片裁剪
+    implementation project(':AndroidImageCropper')
+    //视频播放
+    implementation project(':JiaoZiVideoPlayer')
+    //拍摄视频，选择本地视频
+    implementation project(':WxCameraView')
+    //语音录制
+    implementation project(':WxVoiceSelector')
+    //二维码扫描
+    implementation project(':QrCodeScan')
+    //轮播图
+    implementation 'com.youth.banner:banner:1.4.10'
+    //轮播图
+    implementation('com.alibaba.android:ultraviewpager:1.0.7.7@aar') {
+        transitive = true
+    }
+    //implementation 'com.necer.ncalendar:ncalendar:3.4.5'//日历
+    //implementation 'com.github.huangyanbin:SmartTable:2.2.0'//表格
+    //implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'//曲线图
+    //implementation 'com.teaanddogdog:mpandroidchartutil:1.0.3'//饼状图工具
+    //implementation 'com.blankj:utilcode:1.25.9'//常用工具类
+    //implementation 'com.blankj:utilcodex:1.25.9'
+    //implementation 'com.qmuiteam:qmui:1.4.0'
+    //implementation 'top.androidman:superbutton:1.1.1'
+    //implementation 'com.github.chenBingX:SuperTextView:3.2.3'
+
 }
