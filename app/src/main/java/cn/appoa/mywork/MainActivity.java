@@ -2,10 +2,14 @@ package cn.appoa.mywork;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.TextView;
 
+import butterknife.Bind;
 import cn.appoa.aframework.utils.AtyUtils;
 
 public class MainActivity extends AppCompatActivity {
+    @Bind(R.id.tv_main)
+    TextView tv_main;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
