@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AFramework/aframework.iml" filepath="$PROJECT_DIR$/AFramework/aframework.iml" />
+      <module fileurl="file://$PROJECT_DIR$/AFramework/AFramework.iml" filepath="$PROJECT_DIR$/AFramework/AFramework.iml" />
       <module fileurl="file://$PROJECT_DIR$/AndroidImageCropper/AndroidImageCropper.iml" filepath="$PROJECT_DIR$/AndroidImageCropper/AndroidImageCropper.iml" />
       <module fileurl="file://$PROJECT_DIR$/JiaoZiVideoPlayer/JiaoZiVideoPlayer.iml" filepath="$PROJECT_DIR$/JiaoZiVideoPlayer/JiaoZiVideoPlayer.iml" />
       <module fileurl="file://$PROJECT_DIR$/MyWork.iml" filepath="$PROJECT_DIR$/MyWork.iml" />
