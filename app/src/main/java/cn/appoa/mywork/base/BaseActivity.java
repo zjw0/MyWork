@@ -26,7 +26,8 @@ public abstract class BaseActivity<P extends BasePresenter> extends AfActivity<P
 
     @Override
     public void unBindButterKnife() {
-        ButterKnife.unbind(this);
+        //ButterKnife.unbind(this);
+        ButterKnife.bind(this).unbind();
     }
 
     @Override

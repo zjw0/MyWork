@@ -3,7 +3,8 @@ package cn.appoa.mywork.view;
 import java.util.List;
 
 import cn.appoa.aframework.view.IBaseView;
-import cn.appoa.keyoule.bean.UserInfo;
+import cn.appoa.mywork.bean.UserInfo;
+
 
 public interface LoginView extends IBaseView {
 

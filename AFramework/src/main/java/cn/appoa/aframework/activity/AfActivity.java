@@ -380,6 +380,7 @@ public abstract class AfActivity<P extends BasePresenter> extends SlideBackActiv
     public void unBindButterKnife() {
         // 解绑注解
         //ButterKnife.unbind(this);
+        //ButterKnife.bind(this).unbind();
     }
 
     /**

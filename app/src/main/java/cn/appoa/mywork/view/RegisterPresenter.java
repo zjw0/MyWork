@@ -5,7 +5,7 @@ import java.util.Map;
 import cn.appoa.aframework.listener.VolleyErrorListener;
 import cn.appoa.aframework.listener.VolleySuccessListener;
 import cn.appoa.aframework.view.IBaseView;
-import cn.appoa.keyoule.net.API;
+import cn.appoa.mywork.presenter.VerifyCodePresenter;
 import zm.http.volley.ZmVolley;
 import zm.http.volley.request.ZmStringRequest;
 
@@ -41,17 +41,17 @@ public class RegisterPresenter extends VerifyCodePresenter {
             return;
         }
         mRegisterView.showLoading("正在注册...");
-        Map<String, String> params = API.getParams("loginPhone", phone);
-        params.put("code", code);
-        params.put("password", pwd);
-        params.put("inviteCode", invite_code);
-        ZmVolley.request(new ZmStringRequest(API.registerKylUser, params,
-                new VolleySuccessListener(mRegisterView, "注册", 3) {
-
-                    @Override
-                    public void onSuccessResponse(String response) {
-                        mRegisterView.registerSuccess(phone, pwd);
-                    }
-                }, new VolleyErrorListener(mRegisterView, "注册", "注册失败，请稍后再试！")), mRegisterView.getRequestTag());
+//        Map<String, String> params = API.getParams("loginPhone", phone);
+//        params.put("code", code);
+//        params.put("password", pwd);
+//        params.put("inviteCode", invite_code);
+//        ZmVolley.request(new ZmStringRequest(API.registerKylUser, params,
+//                new VolleySuccessListener(mRegisterView, "注册", 3) {
+//
+//                    @Override
+//                    public void onSuccessResponse(String response) {
+//                        mRegisterView.registerSuccess(phone, pwd);
+//                    }
+//                }, new VolleyErrorListener(mRegisterView, "注册", "注册失败，请稍后再试！")), mRegisterView.getRequestTag());
     }
 }

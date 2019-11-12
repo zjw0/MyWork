@@ -9,6 +9,7 @@ import cn.appoa.aframework.presenter.BasePresenter;
 import cn.appoa.aframework.view.IBaseView;
 
 import cn.appoa.mywork.net.API;
+import cn.appoa.mywork.view.LoginView;
 import zm.http.volley.ZmVolley;
 import zm.http.volley.request.ZmStringRequest;
 
@@ -43,23 +44,23 @@ public class LoginPresenter extends BasePresenter {
         if (mLoginView == null)
             return;
         mLoginView.showLoading("正在登录...");
-        Map<String, String> params = API.getParams("loginPhone", phone);
-        params.put("password", pwd);
-        ZmVolley.request(new ZmStringRequest(API.loginKylUser, params,
-                new VolleyDatasListener<UserInfo>(mLoginView, "登录", 2, UserInfo.class) {
-
-                    @Override
-                    public void onDatasResponse(List<UserInfo> datas) {
-                        if (datas != null && datas.size() > 0) {
-                            mLoginView.loginSuccess(datas.get(0));
-                        }
-                    }
-
-                    @Override
-                    public void onResponse(String response) {
-                        super.onResponse(response);
-                    }
-                }, new VolleyErrorListener(mLoginView, "登录", "登录失败，请稍后再试！")), mLoginView.getRequestTag());
+//        Map<String, String> params = API.getParams("loginPhone", phone);
+//        params.put("password", pwd);
+//        ZmVolley.request(new ZmStringRequest(API.loginKylUser, params,
+//                new VolleyDatasListener<UserInfo>(mLoginView, "登录", 2, UserInfo.class) {
+//
+//                    @Override
+//                    public void onDatasResponse(List<UserInfo> datas) {
+//                        if (datas != null && datas.size() > 0) {
+//                            mLoginView.loginSuccess(datas.get(0));
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onResponse(String response) {
+//                        super.onResponse(response);
+//                    }
+//                }, new VolleyErrorListener(mLoginView, "登录", "登录失败，请稍后再试！")), mLoginView.getRequestTag());
     }
 
     /**
@@ -71,20 +72,20 @@ public class LoginPresenter extends BasePresenter {
         if (mLoginView == null)
             return;
         mLoginView.showLoading("正在微信登录...");
-        Map<String, String> params = API.getParams("openId", openId);
-        ZmVolley.request(new ZmStringRequest(API.doLoginWx, params,
-                new VolleyDatasListener<UserInfo>(mLoginView, "微信登录", 2, UserInfo.class) {
-
-                    @Override
-                    public void onDatasResponse(List<UserInfo> datas) {
-                        mLoginView.thirdLoginSuccess(type, openId, nickName, headImg, datas);
-                    }
-
-                    @Override
-                    public void onResponse(String response) {
-                        super.onResponse(response);
-                    }
-                }, new VolleyErrorListener(mLoginView, "微信登录", "微信登录失败，请稍后再试！")), mLoginView.getRequestTag());
+//        Map<String, String> params = API.getParams("openId", openId);
+//        ZmVolley.request(new ZmStringRequest(API.doLoginWx, params,
+//                new VolleyDatasListener<UserInfo>(mLoginView, "微信登录", 2, UserInfo.class) {
+//
+//                    @Override
+//                    public void onDatasResponse(List<UserInfo> datas) {
+//                        mLoginView.thirdLoginSuccess(type, openId, nickName, headImg, datas);
+//                    }
+//
+//                    @Override
+//                    public void onResponse(String response) {
+//                        super.onResponse(response);
+//                    }
+//                }, new VolleyErrorListener(mLoginView, "微信登录", "微信登录失败，请稍后再试！")), mLoginView.getRequestTag());
     }
 
 }

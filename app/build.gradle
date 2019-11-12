@@ -60,6 +60,7 @@ dependencies {
     //implementation 'top.androidman:superbutton:1.1.1'
     //implementation 'com.github.chenBingX:SuperTextView:3.2.3'
 
-    implementation 'com.jakewharton:butterknife:7.0.1'
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
 }

@@ -21,6 +21,7 @@ import cn.appoa.aframework.utils.AtyUtils;
 import cn.appoa.aframework.utils.SpUtils;
 import cn.appoa.mywork.R;
 import cn.appoa.mywork.base.BaseActivity;
+import cn.appoa.mywork.bean.UserInfo;
 import cn.appoa.mywork.constant.Constant;
 import cn.appoa.mywork.presenter.LoginPresenter;
 import cn.appoa.mywork.utils.MySPUtils;
@@ -126,8 +127,8 @@ public class LoginActivity extends BaseActivity<LoginPresenter>
                         .putExtra("type", 1), 1);
                 break;
             case R.id.tv_login_find_pwd://忘记密码
-                startActivityForResult(new Intent(mActivity, PwdResetActivity.class)
-                        .putExtra("type", 2), 2);
+//                startActivityForResult(new Intent(mActivity, PwdResetActivity.class)
+//                        .putExtra("type", 2), 2);
                 break;
             case R.id.tv_save_pwd://记住密码
                 flag = !flag;
@@ -135,7 +136,7 @@ public class LoginActivity extends BaseActivity<LoginPresenter>
                 break;
             case R.id.iv_wechat://微信登录
                 showLoading("正在登录微信...");
-                ShareSdkUtils.thirdLogin(1, this);
+                //ShareSdkUtils.thirdLogin(1, this);
                 break;
             default:
                 break;
@@ -174,89 +175,49 @@ public class LoginActivity extends BaseActivity<LoginPresenter>
             MySPUtils.putData(mActivity, Constant.FLAG, flag);
             MySPUtils.putData(mActivity, Constant.USER_PHONE, flag ? AtyUtils.getText(et_login_phone) : "");
             MySPUtils.putData(mActivity, Constant.USER_PWD, flag ? AtyUtils.getText(et_login_pwd) : "");
-            BusProvider.getInstance().post(new LoginEvent(1));
-            BusProvider.getInstance().post(new PartnerDriverEvent(1));
+//            BusProvider.getInstance().post(new LoginEvent(1));
+//            BusProvider.getInstance().post(new PartnerDriverEvent(1));
             setResult(RESULT_OK, new Intent().putExtra("user", user));
             finish();
         }
     }
 
     @Override
-    public void onComplete(final Platform platform, int action, HashMap<String, Object> hashMap) {
-        dismissLoading();
-        if (action == Platform.ACTION_USER_INFOR)
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    dismissLoading();
-                    AtyUtils.showShort(mActivity, "授权成功", false);
-                    toThirdLogin(platform);
-                }
-            });
+    public void thirdLoginSuccess(int type, String open_id, String nickName, String headImg, List<UserInfo> data) {
+
     }
 
-    @Override
-    public void onError(final Platform platform, int action, Throwable throwable) {
-        dismissLoading();
-        if (action == Platform.ACTION_USER_INFOR)
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    dismissLoading();
-                    if (platform != null && platform.getDb() != null
-                            && !TextUtils.isEmpty(platform.getDb().getUserId())) {
-                        //部分时候失败中也有用户资料，此时认为授权成功
-                        toThirdLogin(platform);
-                    } else {
-                        AtyUtils.showShort(mActivity, "授权失败", false);
-                    }
-                }
-            });
-    }
-
-    @Override
-    public void onCancel(Platform platform, int action) {
-        dismissLoading();
-        if (action == Platform.ACTION_USER_INFOR)
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    dismissLoading();
-                    AtyUtils.showShort(mActivity, "取消授权", false);
-                }
-            });
-    }
 
     /**
      * 三方授权成功
      *
      * @param platform
      */
-    private void toThirdLogin(Platform platform) {
-        if (platform != null) {
-            PlatformDb platDB = platform.getDb();
-            String openid = platDB.getUserId();//用户openid
-            String nickName = platDB.getUserName();//用户昵称
-            String userPic = platDB.getUserIcon();//用户头像
-            String userGender = platDB.getUserGender();//用户性别
-            AtyUtils.i("第三方登录", openid);
-            if (TextUtils.equals(Wechat.NAME, platform.getName())) {
-                mPresenter.thirdLogin(1, openid, nickName, userPic);
-            }
-        }
-    }
+//    private void toThirdLogin(Platform platform) {
+//        if (platform != null) {
+//            PlatformDb platDB = platform.getDb();
+//            String openid = platDB.getUserId();//用户openid
+//            String nickName = platDB.getUserName();//用户昵称
+//            String userPic = platDB.getUserIcon();//用户头像
+//            String userGender = platDB.getUserGender();//用户性别
+//            AtyUtils.i("第三方登录", openid);
+//            if (TextUtils.equals(Wechat.NAME, platform.getName())) {
+//                mPresenter.thirdLogin(1, openid, nickName, userPic);
+//            }
+//        }
+//    }
 
-    @Override
-    public void thirdLoginSuccess(int type, String open_id, String nickName, String userPic, List<UserInfo> user) {
-        if (user == null || user.size() == 0 || TextUtils.isEmpty(user.get(0).password)) {
-            // 微信登录
-            startActivityForResult(new Intent(mActivity, PwdResetActivity.class)
-                    .putExtra("type", 4)
-                    .putExtra("openId", open_id)
-                    .putExtra("nickName", nickName)
-                    .putExtra("userPic", userPic), 2);
-        } else {
-            loginSuccess(user.get(0));
-        }
-    }
+//    @Override
+//    public void thirdLoginSuccess(int type, String open_id, String nickName, String userPic, List<UserInfo> user) {
+//        if (user == null || user.size() == 0 || TextUtils.isEmpty(user.get(0).password)) {
+//            // 微信登录
+//            startActivityForResult(new Intent(mActivity, PwdResetActivity.class)
+//                    .putExtra("type", 4)
+//                    .putExtra("openId", open_id)
+//                    .putExtra("nickName", nickName)
+//                    .putExtra("userPic", userPic), 2);
+//        } else {
+//            loginSuccess(user.get(0));
+//        }
+//    }
 }
