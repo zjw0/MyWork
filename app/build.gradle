@@ -1,6 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias 'mywork'
+            keyPassword '123456'
+            storeFile file('D:/MyAndroidSpace/studio-demo/MyWork/keystore/mywork.jks')
+            storePassword '123456'
+        }
+    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "cn.appoa.mywork"
@@ -15,11 +23,9 @@ android {
             abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a', 'x86'
         }
         manifestPlaceholders = [
-                JPUSH_PKGNAME : applicationId,
-//                JPUSH_APPKEY  : "384aaf43c86b941f6be30d9d", //JPush上注册的包名对应的appkey.
-//                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
-                JPUSH_APPKEY  : "2db0180447db9c478a9668b0", //JPush上注册的包名对应的appkey.
-                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+                JPUSH_PKGNAME: applicationId,
+                JPUSH_APPKEY : "2db0180447db9c478a9668b0", //JPush上注册的包名对应的appkey.
+                JPUSH_CHANNEL: "developer-default", //暂时填写默认值即可.
         ]
 
     }
@@ -28,11 +34,14 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
+        debug {
+            signingConfig signingConfigs.config
+        }
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'com.wangzhen:dark-status-bar:1.0.0'
     implementation 'com.android.support:appcompat-v7:27.1.1'
@@ -72,11 +81,8 @@ dependencies {
     //implementation 'com.qmuiteam:qmui:1.4.0'
     //implementation 'top.androidman:superbutton:1.1.1'
     //implementation 'com.github.chenBingX:SuperTextView:3.2.3'
-
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
-
     implementation 'cn.jiguang.sdk:jpush:3.1.6'
     implementation 'cn.jiguang.sdk:jcore:1.2.5'
-
 }
