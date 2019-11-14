@@ -5,6 +5,8 @@ import android.support.multidex.MultiDex;
 
 import cn.appoa.aframework.app.AfApplication;
 import cn.appoa.aframework.utils.AESUtils;
+import cn.appoa.aframework.utils.JsonUtils;
+import cn.appoa.mywork.jpush.JPushUtils;
 
 
 public class MyApplication extends AfApplication {
@@ -31,7 +33,9 @@ public class MyApplication extends AfApplication {
         //AES加密
         AESUtils.init("bWFsbHB3ZA==WNST");
         //Json解析
-        //JsonUtils.init(3, "status", "msg", "data");
+        JsonUtils.init(1, "code", "message", "data");
+        //推送
+        JPushUtils.getInstance().init(this, false);
         //初始化MobSDK
         //ShareSdkUtils.initShare(this);
     }

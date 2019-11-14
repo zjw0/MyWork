@@ -1,5 +1,6 @@
 package cn.appoa.mywork;
 
+import android.*;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Button;
@@ -31,6 +32,12 @@ public class MainActivity extends BaseActivity<MainPresenter> implements MainVie
 
     @Override
     public void initData() {
+        String[] permissions = {android.Manifest.permission.WRITE_EXTERNAL_STORAGE,
+                android.Manifest.permission.ACCESS_COARSE_LOCATION,
+                android.Manifest.permission.ACCESS_FINE_LOCATION
+        };
+        requestPermissions(permissions, null);
+
 
     }
 
