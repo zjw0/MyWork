@@ -6,7 +6,7 @@ android {
             keyAlias 'mywork'
             keyPassword '123456'
 //            storeFile file('D:/MyAndroidSpace/studio-demo/MyWork/keystore/mywork.jks')
-            storeFile file('D:\\AAA\\workgit\\MyWork\\keystore\\mywork.jks')
+            storeFile file('D:/AAA/workgit/MyWork/keystore/mywork.jks')
             storePassword '123456'
         }
     }
